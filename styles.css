@@ -223,9 +223,9 @@ main {
 /* --- Committee Grid --- */
 .committee-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px; 
-    margin: 20px auto; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 20px auto;
     max-width: 1000px;
 }
 
@@ -292,7 +292,6 @@ main {
     word-break: break-all;
 }
 
-/* --- Achievements Gallery Styling --- */
 .achievements p {
     margin-bottom: 30px;
 }
@@ -336,7 +335,6 @@ main {
     border-top: 2px solid var(--color-gold);
 }
 
-/* --- Footer Styling --- */
 .site-footer {
     background-color: var(--color-maroon); 
     color: var(--color-white);
@@ -424,7 +422,6 @@ main {
     transition: none;
 }
 
-/* Neutralize the hover state for social links */
 .social-link:hover,
 .social-link:active,
 .social-link:focus {
@@ -474,23 +471,19 @@ main {
 }
 
 .competition-logo2 img {
-    height: 150px;
+    height: 190px;
     width: auto;
     border-radius: 50%;
     margin: 2rem;
 
 }
 
-/* --- Responsive Design (Mobile View) --- */
 @media (max-width: 900px) {
-    /* Header adjustments */
     .site-header {
-        /* Increased min-height to accommodate two lines of text + tagline */
         min-height: 36px; 
         padding: 37px 20px; 
     }
     .header-content-wrapper {
-        /* Remove vertical padding from the content wrapper */
         padding-top: 0; 
         padding-left: 0; 
         padding-right: 0;
@@ -500,7 +493,6 @@ main {
     .header-logo-left {
         display: block;
         position: absolute;
-        /* Aligned vertically center within the 90px height */
         top: 50%; 
         transform: translateY(-50%); 
         left: 20px; 
@@ -518,43 +510,39 @@ main {
         display: none; 
     }
     
-    /* * KEY FIX: Absolute Positioning for Branding Text * */
     .branding-center {
         position: absolute;
         
-        /* Define the available horizontal space */
-        left: 80px;  /* Space past the logo */
-        right: 80px; /* Space before the hamburger */
+        left: 80px;  
+        right: 80px; 
         
-        /* Perfect Vertical Centering */
         top: 50%;
         transform: translateY(-50%); 
         
-        /* Ensure text is centered within its defined absolute block */
         text-align: center; 
         width: auto;
         padding: 0; 
     }
 
     .school-name {
-        /* KEY CHANGE: Removed white-space: nowrap to allow wrapping */
-        font-size: 1.5em; /* Increased size slightly for better visibility */
-        line-height: 1; /* Tightened line height for compact display */
+        
+        font-size: 1.5em; 
+        line-height: 1; 
         margin: 0; 
-        white-space: normal; /* Allow text to wrap naturally */
-        overflow: visible; /* Prevent overflow being hidden */
-        text-overflow: clip; /* Prevent ellipsis */
+        white-space: normal; 
+        overflow: visible; 
+        text-overflow: clip; 
     }
     
     .tagline {
         font-size: 0.7em; 
         margin-top: 2px;
-        white-space: nowrap; /* Keep tagline on one line */
+        white-space: nowrap; 
         text-align: center;
         padding-right: 3rem;
     }
 
-    /* Hamburger Position (Right) */
+
     .hamburger {
         display: block; 
         /* Aligned vertically center within the 90px height */
