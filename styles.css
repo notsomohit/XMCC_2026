@@ -1,0 +1,724 @@
+/* --- Color Palette --- */
+:root {
+    --color-maroon: #391212;
+    --color-gold: #FFD700; 
+    --color-navy: #002D62;
+    --color-bg-light: #FAFAFA;
+    --color-white: #ffffff;
+    --color-text-dark: #333;
+}
+
+/* --- Global Styles and Typography --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg-light); 
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    text-align: center;
+}
+#xmcc-about-text {
+    text-align: justify;
+    max-width: 800px; 
+    margin: 0 auto; 
+    margin-top: 0;
+    margin-bottom: 20px; 
+    line-height: 1.6;
+} 
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; 
+    color: var(--color-maroon); 
+}
+
+a { text-decoration: none; color: var(--color-maroon); }
+a:hover { text-decoration: none; color: var(--color-gold); }
+
+/* --- Header Styling --- */
+.site-header {
+    background-color: var(--color-white);
+    padding: 12px 25px;
+    border-bottom: 5px solid var(--color-gold); 
+    position: relative; 
+    min-height: 120px; 
+}
+
+.header-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    padding-top: 15px; 
+}
+
+/* 1. Left Logo Positioning (Desktop & Laptop) */
+.header-logo-left {
+    position: absolute; 
+    top: 50%;
+    left: 40px; 
+    transform: translateY(-50%); 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 80px; 
+}
+
+.logo {
+    height: 120px;
+    max-height: 130px;
+    margin-right: 2rem;
+}
+
+/* 2. Centered Branding Text (Desktop Default) */
+.branding-center {
+    display: block; 
+    width: 100%;
+    /* Reset absolute positioning for desktop */
+    position: static; 
+    padding: 0;
+    transform: none;
+    text-align: center;
+}
+.school-name {
+    font-size: 2.0em;
+    margin-left: 3rem;
+    font-weight: 700;
+}
+.tagline {
+    font-size: 1.4em;
+    color: #555;
+    margin: 5px 0 0 0;
+    font-weight: 400;
+}
+
+/* 3. Right Icon Positioning */
+.header-icon-right {
+    position: absolute;
+    top: 15px; 
+    right: 40px; /* Aligned with header padding */
+}
+.header-icon-right a {
+    font-size: 30px;
+    color: var(--color-maroon);
+    transition: color 0.3s;
+}
+.header-icon-right a:hover {
+    color: var(--color-gold);
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: var(--color-maroon); 
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.competition-heading-wrapper{
+    display: flex;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+}
+
+.navbar li a {
+    display: block;
+    color: var(--color-white);
+    padding: 14px 20px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar li a:hover {
+    background-color: var(--color-gold); 
+    color: var(--color-maroon);
+}
+
+/* --- Hamburger Menu Styling --- */
+.hamburger {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute; 
+    top: 30px;
+    right: 20px;
+    z-index: 101; /* High z-index to overlay content */
+}
+.bar {
+    display: block; width: 25px; height: 3px; margin: 5px auto;
+    background-color: var(--color-maroon);
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Main Content and Section Centering --- */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px; 
+}
+
+.section-padded {
+    padding: 40px;
+    margin: -10px auto;
+    background-color: var(--color-white);
+    border-radius: 10px; 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+}
+
+.competition-focus h2 {
+    color: var(--color-navy); 
+}
+
+/* --- Link Grid --- */
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; 
+    margin: 30px auto;
+    max-width: 1000px; 
+}
+
+.link-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    margin: 10px;
+    border-left: 6px solid var(--color-maroon); 
+    font-weight: 700;
+    color: var(--color-maroon); 
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.link-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
+    border-left-color: var(--color-gold); 
+    transform: translateY(-2px);
+    background-color: #fcfcfc;
+}
+
+.link-item::before { color: var(--color-gold); }
+
+.primary-link {
+    background-color: var(--color-maroon);
+    color: var(--color-white);
+    border-left-color: var(--color-navy);
+}
+.primary-link::before { color: var(--color-white); }
+.primary-link:hover { background-color: #A30000; border-left-color: var(--color-gold); }
+
+/* --- Committee Grid --- */
+.committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; 
+    margin: 20px auto; 
+    max-width: 1000px;
+}
+
+.member-card {
+    background-color: var(--color-white); 
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; 
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.member-image-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 4px solid var(--color-gold); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.member-title {
+    color: var(--color-maroon);
+    margin-top: 0;
+    font-size: 1.3em;
+}
+
+.member-name {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: var(--color-navy);
+    margin: 5px 0;
+}
+
+.member-role {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.member-contact-label {
+    font-size: 0.85em;
+    font-weight: 500;
+    color: var(--color-maroon);
+    margin-bottom: 0;
+}
+
+.member-contact a {
+    font-weight: 700;
+    color: var(--color-navy);
+    word-break: break-all;
+}
+
+/* --- Achievements Gallery Styling --- */
+.achievements p {
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 0 auto; 
+    max-width: 1200px;
+}
+
+.gallery-item {
+    background-color: var(--color-white);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px) scale(1.02); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+    width: 100%;
+    aspect-ratio: 4/3; 
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.caption {
+    padding: 15px 10px;
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--color-maroon);
+    background-color: #fffaf0; 
+    border-top: 2px solid var(--color-gold);
+}
+
+/* --- Footer Styling --- */
+.site-footer {
+    background-color: var(--color-maroon); 
+    color: var(--color-white);
+    padding: 40px 40px 20px;
+    font-size: 0.9em;
+    text-align: center; 
+}
+
+.footer-content {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    flex-wrap: wrap;
+    text-align: left;
+    padding-left: 40px; 
+}
+
+.footer-column {
+    flex-basis: 30%;
+    min-width: 250px;
+    margin: 0 15px 20px; 
+}
+
+.footer-column h4 {
+    color: var(--color-gold); 
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif; 
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    color: #f0c0c0; 
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer-column address {
+    font-style: normal; 
+}
+
+.footer-email a, .footer-phone a {
+    color: var(--color-gold); 
+    font-weight: 700;
+}
+
+.footer-column ul li a:hover,
+.footer-email a:hover,
+.footer-phone a:hover {
+    color: var(--color-white); 
+    text-decoration: underline;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+    margin-top: 15px;
+    color: #b0c4de;
+}
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 0; 
+}
+
+.social-icons p {
+    font-size: 0.85em;
+    color: #b0c4de;
+    margin-top: 15px;
+}
+
+.social-link {
+    color: var(--color-gold);
+    font-size: 1.8em; 
+    transition: none;
+}
+
+/* Neutralize the hover state for social links */
+.social-link:hover,
+.social-link:active,
+.social-link:focus {
+    color: var(--color-gold);
+    cursor: default;
+}
+
+.competition-heading-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.competition-heading-text {
+  text-align: center;
+  flex: 1;
+}
+
+.competition-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3A0909;
+}
+
+.competition-logo img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+}
+
+
+.competition-logo2 {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.competition-logo2 img {
+    height: 150px;
+    width: auto;
+    border-radius: 50%;
+    margin: 2rem;
+
+}
+
+/* --- Responsive Design (Mobile View) --- */
+@media (max-width: 900px) {
+    /* Header adjustments */
+    .site-header {
+        /* Increased min-height to accommodate two lines of text + tagline */
+        min-height: 36px; 
+        padding: 37px 20px; 
+    }
+    .header-content-wrapper {
+        /* Remove vertical padding from the content wrapper */
+        padding-top: 0; 
+        padding-left: 0; 
+        padding-right: 0;
+    }
+
+    /* Logo Positioning (Left) */
+    .header-logo-left {
+        display: block;
+        position: absolute;
+        /* Aligned vertically center within the 90px height */
+        top: 50%; 
+        transform: translateY(-50%); 
+        left: 20px; 
+        max-height: 50px; 
+        z-index: 10;
+    }
+    
+    .logo {
+        height: 100%;
+        max-height: 50px; 
+        width: auto;
+    }
+
+    .header-icon-right {
+        display: none; 
+    }
+    
+    /* * KEY FIX: Absolute Positioning for Branding Text * */
+    .branding-center {
+        position: absolute;
+        
+        /* Define the available horizontal space */
+        left: 80px;  /* Space past the logo */
+        right: 80px; /* Space before the hamburger */
+        
+        /* Perfect Vertical Centering */
+        top: 50%;
+        transform: translateY(-50%); 
+        
+        /* Ensure text is centered within its defined absolute block */
+        text-align: center; 
+        width: auto;
+        padding: 0; 
+    }
+
+    .school-name {
+        /* KEY CHANGE: Removed white-space: nowrap to allow wrapping */
+        font-size: 1.5em; /* Increased size slightly for better visibility */
+        line-height: 1; /* Tightened line height for compact display */
+        margin: 0; 
+        white-space: normal; /* Allow text to wrap naturally */
+        overflow: visible; /* Prevent overflow being hidden */
+        text-overflow: clip; /* Prevent ellipsis */
+    }
+    
+    .tagline {
+        font-size: 0.7em; 
+        margin-top: 2px;
+        white-space: nowrap; /* Keep tagline on one line */
+        text-align: center;
+        padding-right: 3rem;
+    }
+
+    /* Hamburger Position (Right) */
+    .hamburger {
+        display: block; 
+        /* Aligned vertically center within the 90px height */
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px; 
+        z-index: 10;
+    }
+
+    /* Navbar stacking (Collapsible) */
+    .navbar { 
+        position: absolute; 
+        width: 100%; 
+        /* Aligned exactly below the header (90px height + 5px border-bottom) */
+        top: 95px; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+    .nav-list {
+        flex-direction: column;
+        justify-content: flex-start; 
+        margin: 0;
+        max-height: 0; 
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+    .nav-list.active { 
+        max-height: 300px; 
+    }
+    .navbar li a {
+        text-align: center;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Main Content Padding */
+    main {
+        padding: 20px 15px; 
+    }
+    
+    /* Content stacking and alignment */
+    .-gridlink { grid-template-columns: 1fr; max-width: 100%; }
+    .link-item { align-items: flex-start; }
+    .committee-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    
+    /* Footer stacking */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0; 
+    }
+    .footer-column {
+        min-width: 100%;
+        text-align: center; 
+        margin: 0 0 25px 0;
+    }
+    .social-icons {
+        justify-content: center; 
+    }
+}
+
+.school-name {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tagline {
+    font-family: 'Cardo', serif;
+}
+
+.section-padded h2 {
+    font-family: 'Cardo', serif;
+}
+
+@media (max-width: 768px) {
+
+  .competition-heading-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+
+  .competition-heading-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .competition-heading-text h2 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .competition-heading-text .date-location {
+    font-size: 0.9rem;
+    margin-top: 6px;
+  }
+
+  .competition-logo2 img {
+    height: 90px;      
+    max-width: 100%;
+  }
+
+  .competition-logo {
+    width: 70px;      
+    height: 70px;
+  }
+
+  .competition-logo img {
+    width: 85%;
+    height: 85%;
+  }
+
+  .header-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    position: static;
+    padding: 2px 0;
+  }
+
+  /* REMOVE absolute positioning everywhere */
+  .header-logo-left,
+  .competition-logo2,
+  .branding-center {
+    position: static !important;
+    transform: none !important;
+    left: auto;
+    right: auto;
+    top: auto;
+  }
+
+  /* Logos smaller */
+  .logo {
+    max-height: 45px;
+    margin: 0;
+  }
+
+  .competition-logo2 img {
+    height: 100px;
+    margin: 0;
+  }
+
+  /* Text fixes */
+  .school-name {
+    font-size: 1.05rem;
+    line-height: 1.25;
+    margin: 0;
+    text-align: center;
+  }
+
+  .tagline {
+    font-size: 0.65rem;
+    margin: 0;
+    text-align: center;
+    white-space: normal;
+  }
+
+  /* Hamburger stays right but not overlapping */
+  .hamburger {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+}
