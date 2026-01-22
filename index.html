@@ -418,6 +418,87 @@
 
             .section-padded { padding: 30px 20px; }
         }
+
+        /* =========================
+   MOBILE FULLSCREEN MENU
+   ========================= */
+@media (max-width: 768px) {
+
+    /* Fullscreen overlay */
+    .nav-list {
+        position: fixed;
+        inset: 0;
+        height: 100vh;
+        width: 100vw;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background: rgba(0, 0, 0, 0.75); /* transparent */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.05);
+        transition: all 0.35s ease;
+        z-index: 105;
+    }
+
+    .nav-list.active {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+
+    /* Menu items */
+    .nav-list li {
+        margin: 18px 0;
+    }
+
+    .nav-list li a {
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #fff;
+    }
+
+    .nav-list li a:hover {
+        color: var(--color-gold);
+        background: none;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+        position: fixed;
+        top: 18px;
+        right: 16px;
+        z-index: 110;
+    }
+
+    .bar {
+        width: 30px;
+        height: 3px;
+        background-color: #232222;
+        transition: all 0.3s ease;
+    }
+
+    /* X animation */
+    .hamburger.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+}
+
     </style>
 </head>
 <body>
@@ -613,27 +694,22 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.querySelector('.hamburger');
-            const navList = document.querySelector('#navList');
+      document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navList = document.getElementById('navList');
 
-            hamburger.addEventListener('click', () => {
-                navList.classList.toggle('active');
-            });
+    hamburger.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        hamburger.classList.toggle('open');
+    });
 
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const href = this.getAttribute('href');
-                    if (href === "#") return;
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                        navList.classList.remove('active');
-                    }
-                });
-            });
+    navList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navList.classList.remove('active');
+            hamburger.classList.remove('open');
         });
+    });
+});
     </script>
 </body>
 </html>
